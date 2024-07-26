@@ -10,15 +10,13 @@ function calculateArrowhead(arr) {
       }
     }
   }
-
-  if (rightArrow === leftArrow) return "";
-    if (rightArrow < leftArrow) {
-      const count = leftArrow - rightArrow;
-      return "<".repeat(count);
-    } else if (rightArrow > leftArrow) {
-      const count = rightArrow - leftArrow;
-      return ">".repeat(count);
-    }
+  if (rightArrow > leftArrow) {
+    const value = rightArrow - leftArrow;
+    return ">".repeat(value);
+  } else {
+    const value = leftArrow - rightArrow;
+    return "<".repeat(value);
+  }
 }
 
 console.log(calculateArrowhead([">>>>", "<", "<", "<"]));
